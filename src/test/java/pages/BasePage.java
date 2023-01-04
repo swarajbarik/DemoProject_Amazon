@@ -7,10 +7,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import locators.MainGridLocators;
+
 
 public class BasePage {
 	public static WebDriver driver;
@@ -18,8 +20,12 @@ public class BasePage {
 	public void initBrowser(String browser) {
 
 		if (browser.equalsIgnoreCase("Chrome")) {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--headless");
 			System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
 		}
 	}
