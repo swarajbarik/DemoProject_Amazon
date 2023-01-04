@@ -1,6 +1,6 @@
 Feature: This feature is to test the search tv in Amazon 
 
-  Scenario: Verify the landing page for demoqa app
+  Scenario: Verify the about product section for searched tv
     Given user opens "https://www.amazon.in/" in "chrome" browser
     When Click on the hamburger menu in the top left corner
     And Click on the TV, Appliances and Electronics link under Shop by Department section
