@@ -14,3 +14,11 @@ Run:
   ```
     mvn clean test
   ```
+Run from CI:
+```
+    Goto Actions tab
+    Click on Java CI with Maven
+    Click on Run Workflow dropdown
+    Select the branch as main
+    Click on Run Workflow button
+```
